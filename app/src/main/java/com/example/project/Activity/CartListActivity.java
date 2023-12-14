@@ -37,24 +37,50 @@ public class CartListActivity extends AppCompatActivity {
         calculateCard();
         bottomNavigation();
     }
+
+
     private void bottomNavigation() {
         FloatingActionButton floatingActionButton = findViewById(R.id.card_btn);
         LinearLayout homeBtn = findViewById(R.id.homeBtn);
+        LinearLayout profileBtn = findViewById(R.id.profileBtn);
+        LinearLayout settingsBtn = findViewById(R.id.settingsBtn);
+
+
+
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CartListActivity.this, CartListActivity.class));
+                startActivity(new Intent(CartListActivity .this, CartListActivity.class));
             }
         });
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CartListActivity.this, MainActivity.class));
+                startActivity(new Intent(CartListActivity .this, MainActivity.class));
             }
         });
+
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartListActivity .this, ProfileActivity.class));
+            }
+        });
+
+
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartListActivity .this, ProfileActivity.class));
+            }
+        });
+
+
     }
+
+
     private void initList() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerViewList.setLayoutManager(linearLayoutManager);
